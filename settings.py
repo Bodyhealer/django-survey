@@ -23,7 +23,6 @@ print(
 DEBUG = True
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CSV_DIRECTORY = os.path.join(ROOT, "csv")
-TEX_DIRECTORY = os.path.join(ROOT, "tex")
 
 logging.basicConfig(level=logging.DEBUG, format="%(name)s.%(funcName)s() l.%(lineno)s -\033[32m %(message)s \033[39m")
 
@@ -40,9 +39,6 @@ DATABASES = {
 }
 
 USER_DID_NOT_ANSWER = "Left blank"
-
-TEX_CONFIGURATION_FILE = os.path.join(ROOT, "doc", "example_conf.yaml")
-SURVEY_DEFAULT_PIE_COLOR = "red!50"
 
 CHOICES_SEPARATOR = ","
 

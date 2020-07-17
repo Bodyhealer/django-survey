@@ -95,5 +95,5 @@ Anonymous,,,,""".format(
             self.username, self.other_username
         )
         self.expected_header = ["user", "Aèbc?", "Bècd?", "Cède?", "Dèef?"]
-        self.conf_dir = Path(HERE, "..", "exporter", "tex")
+        self.conf_dir = Path(HERE, "..", "exporter", "csv")
         self.test_conf_path = Path(self.conf_dir, "test_conf.yaml")

@@ -25,7 +25,7 @@ msgstr "zh"
 
 #: dev/templates/base.html:5
 msgid "DEVELOPMENT django-Survey"
-msgstr "django-Survey 开发"
+msgstr "django-Survey"
 
 #: survey/actions.py:13
 #, python-format

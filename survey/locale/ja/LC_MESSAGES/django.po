@@ -24,7 +24,7 @@ msgstr "ja"
 
 #: dev/templates/base.html:5
 msgid "DEVELOPMENT django-Survey"
-msgstr "django-Surveyの開発"
+msgstr "django-Survey"
 
 #: survey/actions.py:13
 #, python-format

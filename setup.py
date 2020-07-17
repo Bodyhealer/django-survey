@@ -19,15 +19,15 @@ with open(path.join(THIS_DIRECTORY, "README.md"), encoding="utf-8") as f:
 
 
 setuptools.setup(
-    name="django-survey-and-report",
-    version="1.3.23",
+    name="django-survey-csv",
+    version="0.1.0",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    author="Pierre SASSOULAS",
-    author_email="pierre.sassoulas@gmail.com",
+    author="Bodyhealer",
+    author_email="klodium@gmail.com",
     license="AGPL",
-    url="https://github.com/Pierre-Sassoulas/django-survey",
+    url="https://github.com/Bodyhealer/django-survey",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[
@@ -57,7 +57,6 @@ setuptools.setup(
         "pytz>=2018.9",
         "ordereddict>=1.1",
         "pyyaml>=4.2b1",
-        "pySankeyBeta~=1.2.2",
     ],
     extras_require={
         "dev": [
