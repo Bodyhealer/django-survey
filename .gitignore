@@ -5,7 +5,7 @@
 *.pyc
 __pycache__
 survey.db
-django_survey.egg-info/
+django_survey_csv.egg-info/
 survey_test/static/
 venv/
 .idea/
