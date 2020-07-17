@@ -9,6 +9,7 @@ django_survey_csv.egg-info/
 survey_test/static/
 venv/
 .idea/
+.vscode/
 .project
 .pydevproject
 .settings/
