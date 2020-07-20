@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import uuid
+
 from datetime import timedelta
 
 from django.conf import settings
@@ -13,6 +15,8 @@ def in_duration_day():
 
 
 class Survey(models.Model):
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     ALL_IN_ONE_PAGE = 0
     BY_QUESTION = 1
