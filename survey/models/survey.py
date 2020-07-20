@@ -16,7 +16,7 @@ def in_duration_day():
 
 class Survey(models.Model):
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.UUIDField(verbose_name="ID", auto_created=True, default=uuid.uuid4, editable=False, primary_key=True, serialize=False)
 
     ALL_IN_ONE_PAGE = 0
     BY_QUESTION = 1
