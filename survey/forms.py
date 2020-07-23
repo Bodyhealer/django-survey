@@ -19,8 +19,8 @@ LOGGER = logging.getLogger(__name__)
 class ResponseForm(models.ModelForm):
 
     FIELDS = {
-        Question.TEXT: forms.CharField,
         Question.SHORT_TEXT: forms.CharField,
+        Question.TEXT: forms.CharField,
         Question.SELECT_MULTIPLE: forms.MultipleChoiceField,
         Question.INTEGER: forms.IntegerField,
         Question.FLOAT: forms.FloatField,
@@ -28,12 +28,21 @@ class ResponseForm(models.ModelForm):
     }
 
     WIDGETS = {
-        Question.TEXT: forms.Textarea,
         Question.SHORT_TEXT: forms.TextInput,
+        Question.TEXT: forms.Textarea,
         Question.RADIO: forms.RadioSelect,
         Question.SELECT: forms.Select,
         Question.SELECT_IMAGE: ImageSelectWidget,
         Question.SELECT_MULTIPLE: forms.CheckboxSelectMultiple,
+    }
+
+    WIDGET_ATTRIBUTES = {
+        Question.SHORT_TEXT: {"class": "form__input"},
+        Question.TEXT: {"class": "form__input"},
+        Question.RADIO: {"class": "form__input"},
+        Question.SELECT: {"class": "form__input"},
+        Question.SELECT_IMAGE: {"class": "form__input"},
+        Question.SELECT_MULTIPLE: {"class": "form__input"},
     }
 
     class Meta:
@@ -197,6 +206,16 @@ class ResponseForm(models.ModelForm):
         except KeyError:
             return None
 
+    def get_question_attributes(self, question):
+        """ Return the atrributes we should use for a question.
+
+        :param Question question: The question
+        :rtype: Dictionary or None"""
+        try:
+            return self.WIDGET_ATTRIBUTES[question.type]
+        except KeyError:
+            return None
+
     @staticmethod
     def get_question_choices(question):
         """ Return the choices we should use for a question.
@@ -237,7 +256,7 @@ class ResponseForm(models.ModelForm):
         choices = self.get_question_choices(question)
         if choices:
             kwargs["choices"] = choices
-        widget = self.get_question_widget(question)
+        widget = self.get_question_widget(question)(attrs=self.get_question_attributes(question))
         if widget:
             kwargs["widget"] = widget
         field = self.get_question_field(question, **kwargs)
