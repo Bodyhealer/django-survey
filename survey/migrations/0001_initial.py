@@ -78,7 +78,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Survey",
             fields=[
-                ("id", models.UUIDField(verbose_name="ID", auto_created=True, default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                (
+                    "id",
+                    models.UUIDField(
+                        verbose_name="ID",
+                        auto_created=True,
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
                 ("name", models.CharField(max_length=400)),
                 ("description", models.TextField()),
                 ("is_published", models.BooleanField()),
